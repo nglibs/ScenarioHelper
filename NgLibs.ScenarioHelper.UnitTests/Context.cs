@@ -1,5 +1,3 @@
-using NgLibs.ScenarioHelper.Abstractions;
-
 namespace NgLibs.ScenarioHelper.UnitTests
 {
     public class Context
