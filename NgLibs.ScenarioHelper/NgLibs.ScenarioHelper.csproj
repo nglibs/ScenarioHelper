@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<Nullable>enable</Nullable>
+		<Company>nglibs</Company>
+		<Product>NgLibs.ScenarioHelper</Product>
+		<Authors>nglibs</Authors>
+		<Description>Utility to create, reuse, execute a set of steps or scenarios.</Description>
+		<Copyright>MIT</Copyright>
+		<PackageTags>Testing, Test, Test case, Step, Scenario</PackageTags>
+		<PackageReleaseNotes>Utility to create, reuse, execute a set of steps or scenarios.</PackageReleaseNotes>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/nglibs/ScenarioHelper.git</RepositoryUrl>
+	</PropertyGroup>
+
+</Project>
