@@ -22,6 +22,22 @@ namespace NgLibs.ScenarioHelper.UnitTests
         }
 
         [Test]
+        public void WhenCreatingTheActionIsNotExecutedUsingExtendedStepClass()
+        {
+            // Arrange
+            var wasCalled = false;
+
+            // Act
+            ContextStep.From(_ =>
+            {
+                wasCalled = true;
+            });
+
+            // Assert
+            wasCalled.Should().BeFalse(because: "No execution was triggered.");
+        }
+
+        [Test]
         public void WhenCreatingAndExecutingTheActionIsExecuted()
         {
             // Arrange
@@ -29,6 +45,22 @@ namespace NgLibs.ScenarioHelper.UnitTests
 
             // Act
             Step<Context>.From(_ =>
+            {
+                wasCalled = true;
+            }).Execute(new Context());
+
+            // Assert
+            wasCalled.Should().BeTrue(because: "The execution was triggered.");
+        }
+
+        [Test]
+        public void WhenCreatingAndExecutingTheActionIsExecutedUsingExtendedStepClass()
+        {
+            // Arrange
+            var wasCalled = false;
+
+            // Act
+            ContextStep.From(_ =>
             {
                 wasCalled = true;
             }).Execute(new Context());

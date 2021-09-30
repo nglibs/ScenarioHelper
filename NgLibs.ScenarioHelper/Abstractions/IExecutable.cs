@@ -1,4 +1,4 @@
-﻿namespace NgLibs.ScenarioHelper
+﻿namespace NgLibs.ScenarioHelper.Abstractions
 {
     /// <summary>
     /// A container for a executable action based on a context.

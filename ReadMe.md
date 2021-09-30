@@ -48,6 +48,15 @@ static class ModuleAbcSteps {
 }
 ```
 
+If majority of the steps have the same context, the Step class can be extended to get rid of the generic type.
+
+E.g.
+```cs
+class ContextStep : Step<Context>
+{
+}
+```
+
 ### Scenario
 
 The creation of a scenario is being done in three steps:
@@ -93,6 +102,14 @@ E.g.
 scenario.Execute(contextInstance);
 ```
 
+If majority of the scenarios have the same context, the Scenario class can be extended to get rid of the generic type.
+
+E.g.
+```cs
+class ContextScenario : Scenario<Context>
+{
+}
+```
 ### Requirements
 
 See [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1)

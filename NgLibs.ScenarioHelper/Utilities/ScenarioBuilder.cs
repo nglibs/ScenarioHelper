@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
+using NgLibs.ScenarioHelper.Abstractions;
 
-namespace NgLibs.ScenarioHelper
+namespace NgLibs.ScenarioHelper.Utilities
 {
-    /// <summary>
-    /// Utility to build a scenario.
-    /// </summary>
-    /// <typeparam name="TContext"></typeparam>
-    public sealed class ScenarioBuilder<TContext> where TContext : notnull
+    public sealed class ScenarioBuilder<TScenario, TContext>
+        where TContext : notnull
+        where TScenario : AbstractScenario<TScenario, TContext>, new()
     {
         private readonly ICollection<IExecutable<TContext>> _executables;
 
@@ -20,7 +19,7 @@ namespace NgLibs.ScenarioHelper
         /// </summary>
         /// <param name="executable"></param>
         /// <returns></returns>
-        public ScenarioBuilder<TContext> Do(IExecutable<TContext> executable)
+        public ScenarioBuilder<TScenario, TContext> Do(IExecutable<TContext> executable)
         {
             _executables.Add(executable);
             return this;
@@ -31,6 +30,11 @@ namespace NgLibs.ScenarioHelper
         /// This should be the last method to be executed when creating a scenario.
         /// </summary>
         /// <returns></returns>
-        public Scenario<TContext> End() => new Scenario<TContext>(_executables);
+        public TScenario End()
+        {
+            var scenario = new TScenario();
+            scenario.Initialize(_executables);
+            return scenario;
+        }
     }
 }
