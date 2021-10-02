@@ -1,3 +1,5 @@
 **/bin/**
 **/obj/**
 **/.vs/**
+/NgLibs.ScenarioHelper.sln.DotSettings.user
+/NgLibs.ScenarioHelper/NgLibs.ScenarioHelper.csproj.user

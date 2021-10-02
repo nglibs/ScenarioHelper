@@ -2,7 +2,7 @@
 
 namespace NgLibs.ScenarioHelper
 {
-    public class Scenario<TContext> : AbstractScenario<Scenario<TContext>, TContext> where TContext : notnull
+    public class Scenario<TContext> : AbstractSyncScenario<Scenario<TContext>, TContext> where TContext : notnull
     {
     }
 }

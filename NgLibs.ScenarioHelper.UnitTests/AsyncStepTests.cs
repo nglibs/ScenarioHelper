@@ -1,9 +1,10 @@
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
+using System.Threading.Tasks;
 
 namespace NgLibs.ScenarioHelper.UnitTests
 {
-    public class StepTests
+    public class AsyncStepTests
     {
         [Test]
         public void WhenCreatingTheActionIsNotExecuted()
@@ -12,26 +13,26 @@ namespace NgLibs.ScenarioHelper.UnitTests
             var wasCalled = false;
 
             // Act
-            Step<Context>.From(_ =>
-            {
-                wasCalled = true;
-            });
+            AsyncStep<Context>.From(async _ =>
+           {
+               wasCalled = true;
+           });
 
             // Assert
             wasCalled.Should().BeFalse(because: "No execution was triggered.");
         }
 
         [Test]
-        public void WhenCreatingAndExecutingTheActionIsExecuted()
+        public async Task WhenCreatingAndExecutingTheActionIsExecuted()
         {
             // Arrange
             var wasCalled = false;
 
             // Act
-            Step<Context>.From(_ =>
+            await AsyncStep<Context>.From(async _ =>
             {
                 wasCalled = true;
-            }).Execute(new Context());
+            }).ExecuteAsync(new Context());
 
             // Assert
             wasCalled.Should().BeTrue(because: "The execution was triggered.");
