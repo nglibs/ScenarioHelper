@@ -7,11 +7,14 @@
 > * [Usage](#usage)
 >   * [Step](#step)
 >   * [Scenario](#scenario)
-> * [License](#license)
 
 
 ## About ScenarioHelper
 This package was created to help creating, reusing, separating the steps and scenarios in a context-agnostic way, where the context is used only at runtime and not when defining these steps.
+
+### Requirements
+
+See [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1)
 
 ## Installation
 * From Visual Studio: Project > Manage NuGet Packages > Browse > NgLibs.ScenarioHelper > Install
@@ -110,11 +113,3 @@ class ContextScenario : Scenario<Context>
 {
 }
 ```
-### Requirements
-
-See [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1)
-
-
-## License
-
-[MIT License](https://opensource.org/licenses/MIT)

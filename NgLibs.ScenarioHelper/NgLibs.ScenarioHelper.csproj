@@ -7,16 +7,17 @@
 		<Product>NgLibs.ScenarioHelper</Product>
 		<Authors>nglibs</Authors>
 		<Description>Utility to create, reuse, execute a set of steps or scenarios.</Description>
-		<Copyright>MIT</Copyright>
+		<Copyright></Copyright>
 		<PackageTags>Testing Test Case Scenario Step Builder Context</PackageTags>
-		<PackageReleaseNotes>Added support for step and scenario class extension</PackageReleaseNotes>
+		<PackageReleaseNotes>Added support for implicit code execution before and after a scenario</PackageReleaseNotes>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/nglibs/ScenarioHelper.git</RepositoryUrl>
-		<Version>1.0.0.1</Version>
+		<Version>1.0.0.2</Version>
 		<PackageLicenseExpression></PackageLicenseExpression>
 		<PackageLicenseFile></PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageProjectUrl>https://github.com/nglibs/ScenarioHelper</PackageProjectUrl>
 	</PropertyGroup>
 
 </Project>
