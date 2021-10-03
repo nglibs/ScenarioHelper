@@ -3,9 +3,9 @@ using System;
 
 namespace NgLibs.ScenarioHelper.Abstractions
 {
-    public abstract class SyncAbstractStep<TStep, TContext> : ISyncExecutable<TContext>
+    public abstract class AbstractSyncStep<TStep, TContext> : ISyncExecutable<TContext>
         where TContext : notnull
-        where TStep : SyncAbstractStep<TStep, TContext>, new()
+        where TStep : AbstractSyncStep<TStep, TContext>, new()
     {
         private Action<TContext>? _action;
         

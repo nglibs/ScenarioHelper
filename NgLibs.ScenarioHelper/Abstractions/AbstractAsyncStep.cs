@@ -4,9 +4,9 @@ using NgLibs.ScenarioHelper.Exceptions;
 
 namespace NgLibs.ScenarioHelper.Abstractions
 {
-    public abstract class AsyncAbstractStep<TStep, TContext> : IAsyncExecutable<TContext>
+    public abstract class AbstractAsyncStep<TStep, TContext> : IAsyncExecutable<TContext>
         where TContext : notnull
-        where TStep : AsyncAbstractStep<TStep, TContext>, new()
+        where TStep : AbstractAsyncStep<TStep, TContext>, new()
     {
         private Func<TContext, Task>? _asyncAction;
 

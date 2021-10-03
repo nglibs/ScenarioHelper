@@ -24,6 +24,8 @@ namespace NgLibs.ScenarioHelper.Abstractions
             }
         }
 
+        protected virtual Task ExecuteFirst(TContext context) => Task.CompletedTask;
+
         public async Task ExecuteAsync(TContext context)
         {
             if (context is null)
@@ -35,6 +37,7 @@ namespace NgLibs.ScenarioHelper.Abstractions
                 throw new NotInitializedException();
             }
 
+            await ExecuteFirst(context);
             foreach (var executable in _executables)
             {
                 switch (executable)
@@ -47,7 +50,10 @@ namespace NgLibs.ScenarioHelper.Abstractions
                         break;
                 }
             }
+            await ExecuteLast(context);
         }
+
+        protected virtual Task ExecuteLast(TContext context) => Task.CompletedTask;
 
         public static AsyncScenarioBuilder<TScenario, TContext> Begin() => new AsyncScenarioBuilder<TScenario, TContext>();
     }

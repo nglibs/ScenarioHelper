@@ -23,6 +23,9 @@ namespace NgLibs.ScenarioHelper.Abstractions
             }
         }
 
+
+        protected virtual void ExecuteFirst(TContext context) { }
+
         public void Execute(TContext context)
         {
             if (context is null)
@@ -34,11 +37,15 @@ namespace NgLibs.ScenarioHelper.Abstractions
                 throw new NotInitializedException();
             }
 
+            ExecuteFirst(context);
             foreach (var executable in _executables)
             {
                 executable.Execute(context);
             }
+            ExecuteLast(context);
         }
+
+        protected virtual void ExecuteLast(TContext context) { }
 
         public static SyncScenarioBuilder<TScenario, TContext> Begin() => new SyncScenarioBuilder<TScenario, TContext>();
     }

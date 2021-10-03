@@ -2,7 +2,7 @@
 
 namespace NgLibs.ScenarioHelper
 {
-    public class AsyncStep<TContext> : AsyncAbstractStep<AsyncStep<TContext>, TContext> where TContext : notnull
+    public class AsyncStep<TContext> : AbstractAsyncStep<AsyncStep<TContext>, TContext> where TContext : notnull
     {
     }
 }
